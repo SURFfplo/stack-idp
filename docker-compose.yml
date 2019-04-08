@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   idp:
+    #image: nginx:0.1
     image: 192.87.106.18:56001/nginx:0.1
     labels: 
       MY_DLO_ENVIRONMENT: development
@@ -12,15 +13,15 @@ services:
       replicas: 1
       restart_policy:
         condition: on-failure
-    links:
-      - php
     networks:
       - dev-net
     volumes:
+      #- $PWD/conf:/etc/nginx/conf.d
       #- $PWD/html:/usr/share/nginx/html
       - /mnt/nfs/nfsdlo/dev-net/idp-0.1/conf:/etc/nginx/conf.d
       - /mnt/nfs/nfsdlo/dev-net/idp-0.1/html:/usr/share/nginx/html
   php:
+    #image: php-fpm:0.1
     image: 192.87.106.18:56001/php-fpm:0.1
     deploy:
       replicas: 1
@@ -29,6 +30,7 @@ services:
     networks:
       - dev-net
     volumes:
+      #- $PWD/html:/usr/share/nginx/html
       - /mnt/nfs/nfsdlo/dev-net/idp-0.1/html:/usr/share/nginx/html
 
 networks:
