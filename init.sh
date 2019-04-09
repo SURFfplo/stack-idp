@@ -18,7 +18,7 @@ mv simplesamlphp-$ssp_version simplesamlphp
 
 
 # to the correct dir
-cd src
+cd ..
 
 # config
 cp env/config.php src/simplesamlphp/config/config.php
