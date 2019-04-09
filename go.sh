@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# init
+./init.sh
+
 # prepare
 ./prepare.sh
 

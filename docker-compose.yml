@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  idp:
+  nginx:
     #image: nginx:0.1
     image: 192.87.106.18:56001/nginx:0.1
     labels: 
@@ -18,8 +18,10 @@ services:
     volumes:
       #- $PWD/conf:/etc/nginx/conf.d
       #- $PWD/html:/usr/share/nginx/html
+      #- $PWD/src/simplesamlphp:/var/simplesamlphp
       - /mnt/nfs/nfsdlo/dev-net/idp-0.1/conf:/etc/nginx/conf.d
       - /mnt/nfs/nfsdlo/dev-net/idp-0.1/html:/usr/share/nginx/html
+      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/src/simplesamlphp:/var/simplesamlphp
   php:
     #image: php-fpm:0.1
     image: 192.87.106.18:56001/php-fpm:0.1
@@ -30,8 +32,8 @@ services:
     networks:
       - dev-net
     volumes:
-      #- $PWD/html:/usr/share/nginx/html
-      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/html:/usr/share/nginx/html
+      #- $PWD/src/simplesamlphp:/var/simplesamlphp
+      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/src/simplesamlphp:/var/simplesamlphp
 
 networks:
   dev-net:
