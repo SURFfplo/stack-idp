@@ -93,7 +93,7 @@ $config = [
      *
      * See this page for a list of valid timezones: http://php.net/manual/en/timezones.php
      */
-    'timezone' => Europe/Amsterdam,
+    'timezone' => 'Europe/Amsterdam',
 
 
 
