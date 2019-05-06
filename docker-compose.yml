@@ -33,6 +33,8 @@ services:
         condition: on-failure
     networks:
       - dev-net
+    ports:
+      - 9001:9000
     volumes:
       #- $PWD/src/simplesamlphp:/var/simplesamlphp
       - /mnt/nfs/nfsdlo/dev-net/idp-0.1/src/simplesamlphp:/var/simplesamlphp
