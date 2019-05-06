@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # to the correct dir
+mkdir -p src
 cd src
+
+# remove old version if it exists...
 rm -rf simplesamlphp
 
 # get simplesaml
@@ -21,4 +24,6 @@ mv simplesamlphp-$ssp_version simplesamlphp
 cd ..
 
 # config
-cp env/config.php src/simplesamlphp/config/config.php
+cp -a config_ssp/config/* src/simplesamlphp/config
+cp -a config_ssp/metadata/* src/simplesamlphp/metadata
+cp -a config_ssp/modules/* src/simplesamlphp/modules

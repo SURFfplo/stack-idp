@@ -4,6 +4,10 @@
  *
  */
 
+/* HERMAN: force https, because we are using a proxy */
+$_SERVER['HTTPS'] = 'on';
+$_SERVER['SERVER_PORT'] = '443';
+
 $config = [
 
     /*******************************
@@ -27,7 +31,7 @@ $config = [
      * external url, no matter where you come from (direct access or via the
      * reverse proxy).
      */
-    'baseurlpath' => 'http://idp.dlo.surfnet.nl',
+    'baseurlpath' => '%SSP_BASEURL%',
 
     /*
      * The 'application' configuration array groups a set configuration options
@@ -72,8 +76,8 @@ $config = [
      * The email address will be used as the recipient address for error reports, and
      * also as the technical contact in generated metadata.
      */
-    'technicalcontact_name' => 'Administrator',
-    'technicalcontact_email' => 'na@example.org',
+    'technicalcontact_name' => '%SSP_CONTACT_NAME%',
+    'technicalcontact_email' => %SSP_CONTACT_EMAIL%',
 
     /*
      * The envelope from address for outgoing emails.
@@ -89,7 +93,7 @@ $config = [
      *
      * See this page for a list of valid timezones: http://php.net/manual/en/timezones.php
      */
-    'timezone' => null,
+    'timezone' => Europe/Amsterdam,
 
 
 
@@ -113,7 +117,7 @@ $config = [
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
-    'auth.adminpassword' => '123',
+    'auth.adminpassword' => '%SSP_ADMIN_PASS%',
 
     /*
      * Set this options to true if you want to require administrator password to access the web interface
@@ -436,8 +440,8 @@ $config = [
      * one of the functionalities below, but in some cases you could run multiple functionalities.
      * In example when you are setting up a federation bridge.
      */
-    'enable.saml20-idp' => false,
-    'enable.shib13-idp' => false,
+    'enable.saml20-idp' => true,
+    'enable.shib13-idp' => true,
     'enable.adfs-idp' => false,
     'enable.wsfed-sp' => false,
     'enable.authmemcookie' => false,
@@ -784,7 +788,7 @@ $config = [
     /*
      * Which theme directory should be used?
      */
-    'theme.use' => 'default',
+    'theme.use' => '%SSP_THEME%',
 
     /*
      * Set this option to the text you would like to appear at the header of each page. Set to false if you don't want
@@ -883,8 +887,22 @@ $config = [
 
         /* When called without parameters, it will fallback to filter attributes ‹the old way›
          * by checking the 'attributes' parameter in metadata on IdP hosted and SP remote.
-         */
         50 => 'core:AttributeLimit',
+         */
+
+
+/* TESTING 123...
+ * Not necessary, because we added the memberOf attribute to the ldap with the 'memberof overlay'
+50 => array(
+    'class' => 'ldap:AttributeAddUsersGroups',
+    'authsource' => 'surfuni-ldap'
+),
+
+61 => array(
+    'class' => 'core:AttributeAdd', 'groups' => array('users', 'members')
+),
+*/
+
 
         /*
          * Search attribute "distinguishedName" for pattern and replaces if found
