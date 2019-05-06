@@ -77,7 +77,7 @@ $config = [
      * also as the technical contact in generated metadata.
      */
     'technicalcontact_name' => '%SSP_CONTACT_NAME%',
-    'technicalcontact_email' => %SSP_CONTACT_EMAIL%',
+    'technicalcontact_email' => '%SSP_CONTACT_EMAIL%',
 
     /*
      * The envelope from address for outgoing emails.
