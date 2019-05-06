@@ -53,6 +53,6 @@ networks:
     external: true
 
 secrets:
-  idp_ssp_admin_password
+  idp_ssp_admin_password:
     external: true
 
