@@ -502,8 +502,8 @@ $metadata['http://account.dlo.surfnet.nl/saml/metadata'] = array(
 );
 
 $metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
-        'AssertionConsumerService' => 'https://lms.dlo.surfnet.nl/login/saml',
-        'SingleLogoutService' => 'https://lms.dlo.surfnet.nl/login/saml/logout',
+        'AssertionConsumerService' => 'http://lms.dlo.surfnet.nl/login/saml',
+        'SingleLogoutService' => 'http://lms.dlo.surfnet.nl/login/saml/logout',
 
   'authproc' => array(
     /* add schacHomeOrganization attribute */
