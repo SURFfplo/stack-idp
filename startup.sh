@@ -27,5 +27,6 @@ sed -i "s~%SSP_THEME%~$SSP_THEME~g" "$SSP_CONF"
 # create certfificates
 cd /var/simplesamlphp/cert
 openssl req -new -x509 -days 3652 -nodes -out server.crt -keyout server.pem -subj "/C=NL/ST=Utrecht/L=Utrecht/O=SURF/CN=www.surf.nl"
+chmod 644 server.pem
 
 exec "$@"
