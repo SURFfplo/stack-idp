@@ -500,3 +500,37 @@ $metadata['http://account.dlo.surfnet.nl/saml/metadata'] = array(
 */
   ),
 );
+
+$metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
+        'AssertionConsumerService' => 'https://lms.dlo.surfnet.nl/login/saml',
+        'SingleLogoutService' => 'https://lms.dlo.surfnet.nl/login/saml/logout',
+
+  'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    50 => array(
+        'class' => 'core:AttributeCopy',
+        'mail' => 'eduPersonPrincipalName',
+    ),
+    /* add the 'urn' prefix to all supported attributes (if available from authentication source) */
+/*
+    90 => array(
+      'class' => 'core:AttributeMap',
+      'uid'                    => 'urn:mace:dir:attribute-def:uid',
+      'sn'                     => 'urn:mace:dir:attribute-def:sn',
+      'givenName'              => 'urn:mace:dir:attribute-def:givenName',
+      'cn'                     => 'urn:mace:dir:attribute-def:cn',
+      'displayName'            => 'urn:mace:dir:attribute-def:displayName',
+      'mail'                   => 'urn:mace:dir:attribute-def:mail',
+      'eduPersonPrincipalName' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+      'eduPersonEntitlement'   => 'urn:mace:dir:attribute-def:eduPersonEntitlement',
+      'eduPersonAffiliation'   => 'urn:mace:dir:attribute-def:eduPersonAffiliation',
+      'schacHomeOrganization'  => 'urn:mace:terena.org:attribute-def:schacHomeOrganization',
+    ),
+*/
+  ),
+);
+
