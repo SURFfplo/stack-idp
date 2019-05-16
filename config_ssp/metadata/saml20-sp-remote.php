@@ -536,3 +536,33 @@ $metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
   ),
 );
 
+$metadata['http://portaal.dlo.surfnet.nl/saml/metadata'] = array(
+        'AssertionConsumerService' => 'http://portaal.dlo.surfnet.nl/saml/acs',
+        'SingleLogoutService' => 'http://portaal.dlo.surfnet.nl/saml/logout',
+'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    /* add the 'urn' prefix to all supported attributes (if available from authentication source) */
+
+/*
+    90 => array(
+      'class' => 'core:AttributeMap',
+      'uid'                    => 'urn:mace:dir:attribute-def:uid',
+      'sn'                     => 'urn:mace:dir:attribute-def:sn',
+      'givenName'              => 'urn:mace:dir:attribute-def:givenName',
+      'cn'                     => 'urn:mace:dir:attribute-def:cn',
+      'mail'                   => 'urn:mace:dir:attribute-def:mail',
+      'memberOf'               => 'isMemberOf',
+
+      'displayName'            => 'urn:mace:dir:attribute-def:displayName',
+      'eduPersonPrincipalName' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+      'eduPersonAffiliation'   => 'urn:mace:dir:attribute-def:eduPersonAffiliation',
+      'schacHomeOrganization'  => 'urn:mace:terena.org:attribute-def:schacHomeOrganization',
+    ),
+*/
+
+  ),
+);
