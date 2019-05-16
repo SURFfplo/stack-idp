@@ -482,7 +482,7 @@ $metadata['http://account.dlo.surfnet.nl/saml/metadata'] = array(
       'schacHomeOrganization' => 'surfuni.org',
     ),
     /* add the 'urn' prefix to all supported attributes (if available from authentication source) */
-/*
+
     90 => array(
       'class' => 'core:AttributeMap',
       'uid'                    => 'urn:mace:dir:attribute-def:uid',
@@ -497,7 +497,7 @@ $metadata['http://account.dlo.surfnet.nl/saml/metadata'] = array(
       'eduPersonAffiliation'   => 'urn:mace:dir:attribute-def:eduPersonAffiliation',
       'schacHomeOrganization'  => 'urn:mace:terena.org:attribute-def:schacHomeOrganization',
     ),
-*/
+
   ),
 );
 
