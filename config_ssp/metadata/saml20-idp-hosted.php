@@ -49,12 +49,13 @@ $metadata['__DYNAMIC:1__'] = array(
 
 	/* Uncomment the following to use the uri NameFormat on attributes. */
 	
+	/*
 	'attributes.NameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
 	'authproc' => array(
 		// Convert LDAP names to oids.
 		100 => array('class' => 'core:AttributeMap', 'name2oid'),
 	),
-	
+	*/
 
 	/* TESTING 123...
 	'authproc' => array(
