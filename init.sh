@@ -27,3 +27,6 @@ cd ..
 cp -a config_ssp/config/* src/simplesamlphp/config
 cp -a config_ssp/metadata/* src/simplesamlphp/metadata
 cp -a config_ssp/modules/* src/simplesamlphp/modules
+
+# status
+cp html/status.php src/simplesamlphp/www
