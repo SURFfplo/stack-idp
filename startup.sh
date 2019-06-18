@@ -5,8 +5,8 @@ set -e
 # ### CONFIGURE NIGINX ###
 
 # replace variables in default.conf
-NGINX_CONF="/conf/default.conf"
-sed -i "s~%PHP_SERVICE%~$PHP_SERVICE~g" "$NGINX_CONF"
+NGINX_CONF="/data/conf/default.conf"
+sed -i "s~%PHP_SERVICE%~${STACK_SERVICE}_php~g" "$NGINX_CONF"
 
 # ### CONFIGURE SIMPLESAMLPHP ###
 
@@ -18,20 +18,22 @@ then
 fi
 
 # replace variables in authsources.php
-SSP_AUTH="/data/config/authsources.php"
+SSP_AUTH="/data/src/simplesamlphp/config/authsources.php"
 sed -i "s~%SSP_LDAP_HOST%~$SSP_LDAP_HOST~g" "$SSP_AUTH"
 sed -i "s~%SSP_LDAP_DOMAIN%~$SSP_LDAP_DOMAIN~g" "$SSP_AUTH"
 
 # replace variables in config.php
-SSP_CONF="/data/config/config.php"
+SSP_CONF="/data/src/simplesamlphp/config/config.php"
 sed -i "s~%SSP_BASEURL%~$SSP_BASEURL~g" "$SSP_CONF"
 sed -i "s~%SSP_ADMIN_PASS%~$MY_PASSWORD~g" "$SSP_CONF"
 sed -i "s~%SSP_CONTACT_NAME%~$SSP_CONTACT_NAME~g" "$SSP_CONF"
 sed -i "s~%SSP_CONTACT_EMAIL%~$SSP_CONTACT_EMAIL~g" "$SSP_CONF"
 sed -i "s~%SSP_THEME%~$SSP_THEME~g" "$SSP_CONF"
 
-# create certfificates
+# ### CREATE CERTIFICATES ###
+
 cd /var/simplesamlphp/cert
+
 openssl req -new -x509 -days 3652 -nodes -out server.crt -keyout server.pem -subj "/C=NL/ST=Utrecht/L=Utrecht/O=SURF/CN=www.surf.nl"
 chmod 644 server.pem
 
