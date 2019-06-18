@@ -27,13 +27,13 @@ export STACK_NETWORK=$NETWORK
 export STACK_PORT=$PORT
 
 if [ $NETWORK == "dev-net" ]; then
-	export $STACK_URL="https://idp.dev.dlo.surf.nl"
+	export STACK_URL=https://idp.dev.dlo.surf.nl
 fi
 if [ $NETWORK == "test-net" ]; then
-	export $STACK_URL="https://idp.test.dlo.surf.nl"
+	export STACK_URL=https://idp.test.dlo.surf.nl
 fi
 if [ $NETWORK == "exp-net" ]; then
-	export $STACK_URL="https://idp.experimenteer.dlo.surf.nl"
+	export STACK_URL=https://idp.experimenteer.dlo.surf.nl
 fi
 
 # init
