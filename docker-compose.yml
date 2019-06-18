@@ -9,20 +9,20 @@ services:
       MY_DLO_PURPOSE: an idp
     ports:
       # platform:56000+, dev:57000+, demo:58000+, pilot:59000+
-      - 57002:80
+      - $STACK_PORT:80
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
     networks:
-      - dev-net
+      - $STACK_NETWORK
     volumes:
       #- $PWD/conf:/etc/nginx/conf.d
       #- $PWD/html:/usr/share/nginx/html
       #- $PWD/src/simplesamlphp:/var/simplesamlphp
-      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/conf:/etc/nginx/conf.d
-      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/html:/usr/share/nginx/html
-      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/src/simplesamlphp:/var/simplesamlphp
+      - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/conf:/etc/nginx/conf.d
+      - /mnt/nfs/nfsdlo//$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/html:/usr/share/nginx/html
+      - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/src/simplesamlphp:/var/simplesamlphp
 
   php:
     #image: php-fpm:0.2
@@ -32,12 +32,10 @@ services:
       restart_policy:
         condition: on-failure
     networks:
-      - dev-net
-    ports:
-      - 9001:9000
+      - $STACK_NETWORK
     volumes:
       #- $PWD/src/simplesamlphp:/var/simplesamlphp
-      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/src/simplesamlphp:/var/simplesamlphp
+      - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/src/simplesamlphp:/var/simplesamlphp
 
   startup:
     #image: alpine:0.1
@@ -51,7 +49,7 @@ services:
     environment:
       SSP_LDAP_HOST: '192.87.106.21'
       SSP_LDAP_DOMAIN: 'dc=surfuni,dc=org'
-      SSP_BASEURL: 'http://idp.dlo.surfnet.nl'
+      SSP_BASEURL: $STACK_URL
       SSP_ADMIN_PASS: /run/secrets/idp_ssp_admin_password
       SSP_CONTACT_NAME: 'Herman van Dompseler'
       SSP_CONTACT_EMAIL: 'herman@surfnet.nl'
@@ -60,11 +58,15 @@ services:
       - $STACK_NETWORK
     volumes:
       #- $PWD/src/$STACK_SERVICE:/app
-      - /mnt/nfs/nfsdlo/dev-net/idp-0.1/src/simplesamlphp:/data
+      - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/src/simplesamlphp:/data
       - $PWD/startup.sh:/startup.sh
 
 networks:
   dev-net:
+    external: true
+  test-net:
+    external: true
+  exp-net:
     external: true
 
 secrets:
