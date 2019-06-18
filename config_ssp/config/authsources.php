@@ -263,6 +263,7 @@ $config = array(
 
         // The hostname of the LDAP server.
         'hostname' => '%SSP_LDAP_HOST%',
+        'port' => '%SSP_LDAP_PORT%',
 
         // Whether SSL/TLS should be used when contacting the LDAP server.
         'enable_tls' => FALSE,

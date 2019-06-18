@@ -20,6 +20,7 @@ fi
 # replace variables in authsources.php
 SSP_AUTH="/data/src/simplesamlphp/config/authsources.php"
 sed -i "s~%SSP_LDAP_HOST%~$SSP_LDAP_HOST~g" "$SSP_AUTH"
+sed -i "s~%SSP_LDAP_PORT%~$SSP_LDAP_PORT~g" "$SSP_AUTH"
 sed -i "s~%SSP_LDAP_DOMAIN%~$SSP_LDAP_DOMAIN~g" "$SSP_AUTH"
 
 # replace variables in config.php

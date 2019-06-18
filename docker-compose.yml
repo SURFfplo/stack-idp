@@ -49,8 +49,9 @@ services:
     environment:
       PHP_STACK_SERVICE: $STACK_SERVICE
       SSP_LDAP_HOST: '192.87.106.21'
+      SSP_LDAP_PORT: $STACK_NETWORK_LDAPPORT
       SSP_LDAP_DOMAIN: 'dc=surfuni,dc=org'
-      SSP_BASEURL: $STACK_URL
+      SSP_BASEURL: $STACK_NETWORK_URL
       SSP_ADMIN_PASS: /run/secrets/idp_ssp_admin_password
       SSP_CONTACT_NAME: 'Herman van Dompseler'
       SSP_CONTACT_EMAIL: 'herman@surfnet.nl'
