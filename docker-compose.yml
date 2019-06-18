@@ -47,6 +47,7 @@ services:
     secrets:
       - idp_ssp_admin_password
     environment:
+      PHP_SERVICE: php.$STACK_SERVICE
       SSP_LDAP_HOST: '192.87.106.21'
       SSP_LDAP_DOMAIN: 'dc=surfuni,dc=org'
       SSP_BASEURL: $STACK_URL

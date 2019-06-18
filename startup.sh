@@ -2,6 +2,12 @@
 
 set -e
 
+# ### CONFIGURE NIGINX ###
+
+# replace variables in default.conf
+NGINX_CONF="/conf/default.conf"
+sed -i "s~%PHP_SERVICE%~$PHP_SERVICE~g" "$NGINX_CONF"
+
 # ### CONFIGURE SIMPLESAMLPHP ###
 
 # get admin password
