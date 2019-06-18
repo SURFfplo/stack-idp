@@ -39,6 +39,10 @@ if [ $NETWORK == "exp-net" ]; then
 	export STACK_NETWORK_LDAPPORT=391
 fi
 
+# delete previous version
+# note: geen rollback!
+docker stack rm $STACK_SERVICE
+
 # init
 ./init.sh
 
