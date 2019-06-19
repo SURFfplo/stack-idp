@@ -472,7 +472,7 @@ $metadata['https://secure.pluform.com/nl/saml_surfpilot/metadata'] = array(
  ***********************
  */
 
-$metadata['https://account.dev.dlo.surfnet.nl/saml/metadata'] = array(
+$metadata['https://account.dev.dlo.surf.nl/saml/metadata'] = array(
         'AssertionConsumerService' => 'https://account.dev.dlo.surf.nl/saml/acs',
         'SingleLogoutService' => 'https://account.dev.dlo.surf.nl/saml/logout',
 'authproc' => array(
