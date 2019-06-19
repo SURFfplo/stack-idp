@@ -472,9 +472,9 @@ $metadata['https://secure.pluform.com/nl/saml_surfpilot/metadata'] = array(
  ***********************
  */
 
-$metadata['http://account.dlo.surfnet.nl/saml/metadata'] = array(
-        'AssertionConsumerService' => 'http://account.dlo.surfnet.nl/saml/acs',
-        'SingleLogoutService' => 'http://account.dlo.surfnet.nl/saml/logout',
+$metadata['https://account.dev.dlo.surfnet.nl/saml/metadata'] = array(
+        'AssertionConsumerService' => 'https://account.dev.dlo.surf.nl/saml/acs',
+        'SingleLogoutService' => 'https://account.dev.dlo.surf.nl/saml/logout',
 'authproc' => array(
     /* add schacHomeOrganization attribute */
     10 => array(
@@ -503,9 +503,9 @@ $metadata['http://account.dlo.surfnet.nl/saml/metadata'] = array(
   ),
 );
 
-$metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
-        'AssertionConsumerService' => 'http://lms.dlo.surfnet.nl/login/saml',
-        'SingleLogoutService' => 'http://lms.dlo.surfnet.nl/login/saml/logout',
+$metadata['https://lms.dev.dlo.surf.nl/saml2'] = array(
+        'AssertionConsumerService' => 'https://lms.dev.dlo.surf.nl/login/saml',
+        'SingleLogoutService' => 'https://lms.dev.dlo.surf.nl/login/saml/logout',
 
   'authproc' => array(
     /* add schacHomeOrganization attribute */
@@ -536,9 +536,9 @@ $metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
   ),
 );
 
-$metadata['http://portaal.dlo.surfnet.nl/saml/metadata'] = array(
-        'AssertionConsumerService' => 'http://portaal.dlo.surfnet.nl/saml/acs',
-        'SingleLogoutService' => 'http://portaal.dlo.surfnet.nl/saml/logout',
+$metadata['https://portaal.dev.dlo.surf.nl/saml/metadata'] = array(
+        'AssertionConsumerService' => 'https://portaal.dev.dlo.surf.nl/saml/acs',
+        'SingleLogoutService' => 'https://portaal.dev.dlo.surf.nl/saml/logout',
 'authproc' => array(
     /* add schacHomeOrganization attribute */
     10 => array(
