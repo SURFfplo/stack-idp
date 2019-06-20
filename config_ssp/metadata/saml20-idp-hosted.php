@@ -21,11 +21,13 @@ $metadata['__DYNAMIC:1__'] = array(
 	 * Authentication source to use. Must be one that is configured in
 	 * 'config/authsources.php'.
 	 */
-	/* 'auth' => 'surfuni-ldap',
-	'auth' => 'ldapandsurf',
-	'auth' => 'SURFconext', */
-
+	/* 
 	'auth' => 'surfuni-ldap',
+	'auth' => 'SURFconext', 
+	'auth' => 'ldapandsurf',
+        */
+
+	'auth' => 'SURFconext',
 
 	/*
 	 * WARNING: SHA-1 is disallowed starting January the 1st, 2014.
