@@ -439,7 +439,7 @@ $config = array(
         	20 => array(
             		'class' => 'saml:NameIDAttribute',
             		'format' => '%V',
-            		'attribute' => 'myNameID',
+            		'attribute' => 'nameId',
         	),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
@@ -458,7 +458,7 @@ $config = array(
     		),
     		70 => array(
         		'class' => 'core:AttributeLimit',
-			'urn:mace:dir:attribute-def:eduPersonTargetedID', 'urn:mace:dir:attribute-def:givenName', 'urn:mace:dir:attribute-def:sn', 'urn:mace:dir:attribute-def:mail', 'urn:mace:terena.org:attribute-def:schacHomeOrganization', 'urn:mace:dir:attribute-def:uid', 'cn', 'uid', 'mail', 'sn', 'givenName', 'schacHomeOrganization'
+			'urn:mace:dir:attribute-def:eduPersonTargetedID', 'urn:mace:dir:attribute-def:givenName', 'urn:mace:dir:attribute-def:sn', 'urn:mace:dir:attribute-def:mail', 'urn:mace:terena.org:attribute-def:schacHomeOrganization', 'urn:mace:dir:attribute-def:uid', 'cn', 'uid', 'mail', 'sn', 'givenName', 'schacHomeOrganization', nameId
     		),
 
 	),
