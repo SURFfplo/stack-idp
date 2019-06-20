@@ -503,7 +503,7 @@ $metadata['https://account.dev.dlo.surf.nl/saml/metadata'] = array(
   ),
 );
 
-$metadata['https://lms.dev.dlo.surf.nl/saml2'] = array(
+$metadata['http://lms.dev.dlo.surf.nl/saml2'] = array(
         'AssertionConsumerService' => 'https://lms.dev.dlo.surf.nl/login/saml',
         'SingleLogoutService' => 'https://lms.dev.dlo.surf.nl/login/saml/logout',
 
