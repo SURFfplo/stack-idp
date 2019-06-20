@@ -438,6 +438,10 @@ $config = array(
       			'uidTest' => '123',
     		),
 		*/
+        	20 => array(
+            		'class' => 'saml:NameIDAttribute',
+            		'format' => '%V',
+        	),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
     			'authsource' => 'surfuni-ldap',
