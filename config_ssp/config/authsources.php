@@ -432,15 +432,14 @@ $config = array(
  
 	// add uid attribute from ldap
         'authproc' => array(
-		/*
     		10 => array(
       			'class' => 'core:AttributeAdd',
       			'uidTest' => '123',
     		),
-		*/
         	20 => array(
             		'class' => 'saml:NameIDAttribute',
             		'format' => '%V',
+            		'attribute' => 'myNameID',
         	),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
