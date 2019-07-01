@@ -38,4 +38,18 @@ cd /data/src/simplesamlphp/cert
 openssl req -new -x509 -days 3652 -nodes -out server.crt -keyout server.pem -subj "/C=NL/ST=Utrecht/L=Utrecht/O=SURF/CN=www.surf.nl"
 chmod 644 server.pem
 
+if [ -f "/data/save/server.crt" ]
+then
+	cp -a /data/save/server.crt /data/src/simplesamlphp/cert
+else
+	cp -a /data/src/simplesamlphp/cert/server.crt /data/save
+fi
+
+if [ -f "/data/save/server.pem" ]
+then
+	cp -a /data/save/server.pem /data/src/simplesamlphp/cert
+else
+	cp -a /data/src/simplesamlphp/cert/server.pem /data/save
+fi
+
 exec "$@"
