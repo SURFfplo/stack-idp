@@ -61,7 +61,7 @@ services:
     volumes:
       #- $PWD/src/$STACK_SERVICE:/app
       - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION:/data
-      - $PWD/startup.sh:/startup.sh
+      - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/tmp/startup.sh:/startup.sh
 
 networks:
   dev-net:
