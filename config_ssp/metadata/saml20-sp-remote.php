@@ -484,6 +484,24 @@ $metadata['https://account.dev.dlo.surf.nl/saml/metadata'] = array(
   ),
 );
 
+/* ***** TEMP ***** */
+$metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
+        'AssertionConsumerService' => 'https://lms.dev.dlo.surf.nl/login/saml',
+        'SingleLogoutService' => 'https://lms.dev.dlo.surf.nl/login/saml/logout',
+
+  'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    50 => array(
+        'class' => 'core:AttributeCopy',
+        'mail' => 'eduPersonPrincipalName',
+    ),
+  ),
+);
+
 $metadata['http://lms.dev.dlo.surf.nl/saml2'] = array(
         'AssertionConsumerService' => 'https://lms.dev.dlo.surf.nl/login/saml',
         'SingleLogoutService' => 'https://lms.dev.dlo.surf.nl/login/saml/logout',
