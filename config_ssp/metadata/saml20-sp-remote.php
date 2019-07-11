@@ -495,6 +495,10 @@ $metadata['http://lms.dlo.surfnet.nl/saml2'] = array(
       'class' => 'core:AttributeAdd',
       'schacHomeOrganization' => 'surfuni.org',
     ),
+    49 => array(
+        'class' => 'core:CardinalitySingle',
+        'firstValue' => array('mail'),
+    ),
     50 => array(
         'class' => 'core:AttributeCopy',
         'mail' => 'eduPersonPrincipalName',
@@ -511,6 +515,10 @@ $metadata['http://lms.dev.dlo.surf.nl/saml2'] = array(
     10 => array(
       'class' => 'core:AttributeAdd',
       'schacHomeOrganization' => 'surfuni.org',
+    ),
+    49 => array(
+        'class' => 'core:CardinalitySingle',
+        'firstValue' => array('mail'),
     ),
     50 => array(
         'class' => 'core:AttributeCopy',
