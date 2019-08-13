@@ -628,3 +628,30 @@ $metadata['https://portaal.experimenteer.dlo.surf.nl/saml/metadata'] = array(
     ),
   ),
 );
+
+
+
+$metadata['http://192.87.106.21:57003/auth/realms/master'] = array(
+        'AssertionConsumerService' => 'http://192.87.106.21:57003/auth/realms/master/broker/saml/endpoint',
+  'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    /* add the 'urn' prefix to all supported attributes (if available from authentication source) */
+    90 => array(
+      'class' => 'core:AttributeMap',
+      'uid'                    => 'urn:mace:dir:attribute-def:uid',
+      'sn'                     => 'urn:mace:dir:attribute-def:sn',
+      'givenName'              => 'urn:mace:dir:attribute-def:givenName',
+      'cn'                     => 'urn:mace:dir:attribute-def:cn',
+      'displayName'            => 'urn:mace:dir:attribute-def:displayName',
+      'mail'                   => 'urn:mace:dir:attribute-def:mail',
+      'eduPersonPrincipalName' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+      'eduPersonEntitlement'   => 'urn:mace:dir:attribute-def:eduPersonEntitlement',
+      'eduPersonAffiliation'   => 'urn:mace:dir:attribute-def:eduPersonAffiliation',
+      'schacHomeOrganization'  => 'urn:mace:terena.org:attribute-def:schacHomeOrganization',
+    ),
+  ),
+);
