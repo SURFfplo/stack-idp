@@ -631,8 +631,8 @@ $metadata['https://portaal.experimenteer.dlo.surf.nl/saml/metadata'] = array(
 
 
 
-$metadata['http://192.87.106.21:57003/auth/realms/master'] = array(
-        'AssertionConsumerService' => 'http://192.87.106.21:57003/auth/realms/master/broker/saml/endpoint',
+$metadata['http://192.87.106.21:58003/auth/realms/dlo/broker/saml/endpoint'] = array(
+        'AssertionConsumerService' => 'http://192.87.106.21:58003/auth/realms/dlo/broker/saml/endpoint',
   'authproc' => array(
     /* add schacHomeOrganization attribute */
     10 => array(
