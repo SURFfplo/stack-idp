@@ -638,6 +638,7 @@ $metadata['https://oidc.test.dlo.surf.nl/auth/realms/dlo'] = array(
     3 => array(
         'class' => 'saml:AttributeNameID',
         'attribute' => 'eduPersonPrincipalName',
+        'Format' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',    
     /*    'attribute' => 'mail',
         'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress', */
     ),    
