@@ -637,10 +637,8 @@ $metadata['https://oidc.test.dlo.surf.nl/auth/realms/dlo'] = array(
     /* add mail since keycloak does not operate well with transient */
     3 => array(
         'class' => 'saml:AttributeNameID',
-        'attribute' => 'eduPersonPrincipalName',
-        'Format' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',    
-    /*    'attribute' => 'mail',
-        'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress', */
+        'attribute' => 'mail',
+        'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress', 
     ),    
     /* add schacHomeOrganization attribute */
     10 => array(
