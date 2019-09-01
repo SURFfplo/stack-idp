@@ -635,13 +635,13 @@ $metadata['https://oidc.test.dlo.surf.nl/auth/realms/dlo'] = array(
         'AssertionConsumerService' => 'https://oidc.test.dlo.surf.nl/auth/realms/dlo/broker/saml/endpoint',
   'authproc' => array(
     /* add persistend ID since keycloak does not operate well with transient */
-    1 => array(
+    /* 1 => array(
         'class' => 'saml:TransientNameID',
     ),
     2 => array(
         'class' => 'saml:PersistentNameID',
         'attribute' => 'eduPersonPrincipalName',
-    ),
+    ), */
     3 => array(
         'class' => 'saml:AttributeNameID',
         'attribute' => 'mail',
