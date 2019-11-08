@@ -8,8 +8,8 @@ cd src
 rm -rf simplesamlphp
 
 # get simplesaml
-ssp_version=1.17.6
-ssp_hash=7e388276106e07bc0d1e365b2e3d53b6f01b6d769417b70826cae085be9a180a
+ssp_version=1.17.7
+ssp_hash=848996e0c8a8367f2e98960b54f719740c3da1dd62081e712eb2c5beb28d971e
 
 wget https://github.com/simplesamlphp/simplesamlphp/releases/download/v$ssp_version/simplesamlphp-$ssp_version.tar.gz
 echo "$ssp_hash simplesamlphp-$ssp_version.tar.gz" | sha256sum -c -
