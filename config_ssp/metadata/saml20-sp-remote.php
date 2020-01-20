@@ -661,3 +661,35 @@ $metadata['https://oidc.test.dlo.surf.nl/auth/realms/dlo'] = array(
     ),
   ),
 );
+
+$metadata['https://oidc.dev.dlo.surf.nl/auth/realms/dlo'] = array(
+        'AssertionConsumerService' => 'https://oidc.dev.dlo.surf.nl/auth/realms/dlo/broker/saml/endpoint',
+  'authproc' => array(
+    /* add mail since keycloak does not operate well with transient */
+    3 => array(
+        'class' => 'saml:AttributeNameID',
+        'attribute' => 'mail',
+        'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress', 
+    ),    
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    /* add the 'urn' prefix to all supported attributes (if available from authentication source) */
+    90 => array(
+      'class' => 'core:AttributeMap',
+      'uid'                    => 'urn:mace:dir:attribute-def:uid',
+      'sn'                     => 'urn:mace:dir:attribute-def:sn',
+      'givenName'              => 'urn:mace:dir:attribute-def:givenName',
+      'cn'                     => 'urn:mace:dir:attribute-def:cn',
+      'displayName'            => 'urn:mace:dir:attribute-def:displayName',
+      'mail'                   => 'urn:mace:dir:attribute-def:mail',
+      'eduPersonPrincipalName' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+      'eduPersonEntitlement'   => 'urn:mace:dir:attribute-def:eduPersonEntitlement',
+      'eduPersonAffiliation'   => 'urn:mace:dir:attribute-def:eduPersonAffiliation',
+      'schacHomeOrganization'  => 'urn:mace:terena.org:attribute-def:schacHomeOrganization',
+    ),
+  ),
+);
+
