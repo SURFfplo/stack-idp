@@ -693,3 +693,24 @@ $metadata['https://oidc.dev.dlo.surf.nl/auth/realms/dlo'] = array(
   ),
 );
 
+$metadata['urn:mace:saml2v2.no:services:com.itslearning.test'] = array(
+        'AssertionConsumerService' => 'https://www.itsltest.com/eLogin/AssertionConsumerService.aspx',
+        'SingleLogoutService' => 'https://www.itsltest.com/elogin/SingleLogoutHandler.aspx',
+
+  'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    49 => array(
+        'class' => 'core:CardinalitySingle',
+        'firstValue' => array('mail'),
+    ),
+    50 => array(
+        'class' => 'core:AttributeCopy',
+        'mail' => 'eduPersonPrincipalName',
+    ),
+  ),
+);
+
