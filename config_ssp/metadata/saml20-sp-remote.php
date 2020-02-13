@@ -709,7 +709,7 @@ $metadata['urn:mace:saml2v2.no:services:com.itslearning.test'] = array(
     ),
     50 => array(
         'class' => 'core:AttributeCopy',
-        'mail' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+        'mail' => 'urn:oid:1.3.6.1.4.1.5923.1.1.1.9',
     ),
   ),
 );
