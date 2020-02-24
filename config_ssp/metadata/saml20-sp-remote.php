@@ -715,3 +715,8 @@ $metadata['urn:mace:saml2v2.no:services:com.itslearning.test'] = array(
   ),
 );
 
+
+$metadata['http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/metadata.php'] = array(
+        'AssertionConsumerService' => 'http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/acs.php',
+        'SingleLogoutService' => 'http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/sls.php',
+);
