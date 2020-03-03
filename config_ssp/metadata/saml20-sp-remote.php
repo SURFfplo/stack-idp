@@ -629,8 +629,6 @@ $metadata['https://portaal.experimenteer.dlo.surf.nl/saml/metadata'] = array(
   ),
 );
 
-
-
 $metadata['https://oidc.test.dlo.surf.nl/auth/realms/dlo'] = array(
         'AssertionConsumerService' => 'https://oidc.test.dlo.surf.nl/auth/realms/dlo/broker/saml/endpoint',
   'authproc' => array(
@@ -693,6 +691,11 @@ $metadata['https://oidc.dev.dlo.surf.nl/auth/realms/dlo'] = array(
   ),
 );
 
+/*
+ ***********************
+ * CHALLENGE 20202
+ ***********************
+ */
 $metadata['urn:mace:saml2v2.no:services:com.itslearning.test'] = array(
         'AssertionConsumerService' => 'https://www.itsltest.com/eLogin/AssertionConsumerService.aspx',
         'SingleLogoutService' => 'https://www.itsltest.com/elogin/SingleLogoutHandler.aspx',
@@ -715,8 +718,13 @@ $metadata['urn:mace:saml2v2.no:services:com.itslearning.test'] = array(
   ),
 );
 
-
 $metadata['http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/metadata.php'] = array(
         'AssertionConsumerService' => 'http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/acs.php',
         'SingleLogoutService' => 'http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/sls.php',
+);
+
+
+$metadata['https://lab.test.easion.nl/simplesaml/module.php/saml/sp/metadata.php/surfconext_v5_test_challenge'] = array(
+        'AssertionConsumerService' => 'https://lab.test.easion.nl/simplesaml/module.php/saml/sp/saml2-acs.php/surfconext_v5_test_challenge',
+        'SingleLogoutService' => 'https://lab.test.easion.nl/simplesaml/module.php/saml/sp/saml2-logout.php/surfconext_v5_test_challenge',
 );
