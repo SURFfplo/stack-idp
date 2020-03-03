@@ -721,10 +721,44 @@ $metadata['urn:mace:saml2v2.no:services:com.itslearning.test'] = array(
 $metadata['http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/metadata.php'] = array(
         'AssertionConsumerService' => 'http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/acs.php',
         'SingleLogoutService' => 'http://dloxerte.dlearning.nl/library/Xerte/Authentication/Saml2/endpoints/sls.php',
+
+  'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    49 => array(
+        'class' => 'core:CardinalitySingle',
+        'firstValue' => array('mail'),
+    ),
+    50 => array(
+        'class' => 'core:AttributeCopy',
+        /*'mail' => 'urn:oid:1.3.6.1.4.1.5923.1.1.1.9',*/
+        'mail' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+    ),
+  ),
 );
 
 
 $metadata['https://lab.test.easion.nl/simplesaml/module.php/saml/sp/metadata.php/surfconext_v5_test_challenge'] = array(
         'AssertionConsumerService' => 'https://lab.test.easion.nl/simplesaml/module.php/saml/sp/saml2-acs.php/surfconext_v5_test_challenge',
         'SingleLogoutService' => 'https://lab.test.easion.nl/simplesaml/module.php/saml/sp/saml2-logout.php/surfconext_v5_test_challenge',
+
+  'authproc' => array(
+    /* add schacHomeOrganization attribute */
+    10 => array(
+      'class' => 'core:AttributeAdd',
+      'schacHomeOrganization' => 'surfuni.org',
+    ),
+    49 => array(
+        'class' => 'core:CardinalitySingle',
+        'firstValue' => array('mail'),
+    ),
+    50 => array(
+        'class' => 'core:AttributeCopy',
+        /*'mail' => 'urn:oid:1.3.6.1.4.1.5923.1.1.1.9',*/
+        'mail' => 'urn:mace:dir:attribute-def:eduPersonPrincipalName',
+    ),
+  ),
 );
