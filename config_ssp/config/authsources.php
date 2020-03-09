@@ -443,6 +443,7 @@ $config = array(
 			'replacement' => '-',
 		),
     			//'search.filter' => '(cn=%searchwithldap%)',
+    			'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
 	*/
         'authproc' => array(
     		10 => array(
@@ -454,11 +455,15 @@ $config = array(
             		'format' => '%V',
             		'attribute' => 'nameId',
         	),
+    		48 => array(
+        		'class' => 'core:AttributeCopy',
+        		'urn:mace:dir:attribute-def:mail' => 'searchwithldap',
+		),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
     			'authsource' => 'surfuni-ldap',
     			'attributes' => array('uid'),
-    			'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
+    			'search.filter' => '(cn=%searchwithldap%)',
 		),
     		60 => array(
         		'class' => 'core:AttributeCopy',
