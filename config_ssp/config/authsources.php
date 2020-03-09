@@ -448,7 +448,7 @@ $config = array(
 		49 => array(
 			'class' => 'core:AttributeAlter',
 			'subject' => 'searchwithldap',
-			'pattern' => '/Joseph+Weeler@university-example.org/',
+			'pattern' => '/Joseph\+Weeler@university\-example\.org/',
 			'replacement' => 'Joseph-Weeler@university-example.org',
 		),
 		50 => array(
