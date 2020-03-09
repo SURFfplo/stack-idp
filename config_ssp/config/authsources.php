@@ -441,11 +441,19 @@ $config = array(
             		'format' => '%V',
             		'attribute' => 'nameId',
         	),
+		40 => array(
+			'class' => 'core:AttributeAlter',
+			'subject' => 'urn:mace:dir:attribute-def:mail',
+			'pattern' => '/+/',
+			'replacement' => '-',
+			'target' => 'searchwithldap',
+		),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
     			'authsource' => 'surfuni-ldap',
     			'attributes' => array('uid'),
-    			'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
+    			//'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
+    			'search.filter' => '(cn=%searchwithldap%)',
 		),
     		60 => array(
         		'class' => 'core:AttributeCopy',
