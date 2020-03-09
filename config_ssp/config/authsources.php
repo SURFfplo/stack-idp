@@ -431,20 +431,6 @@ $config = array(
         ),
  
 	// add uid attribute from ldap
-        /* attempt to replace + with -, but pattern matching is not like this...
-    		48 => array(
-        		'class' => 'core:AttributeCopy',
-        		'urn:mace:dir:attribute-def:mail' => 'searchwithldap',
-		),
-		49 => array(
-			'class' => 'core:AttributeAlter',
-			'subject' => 'searchwithldap',
-			'pattern' => '/+/',
-			'replacement' => '-',
-		),
-    			//'search.filter' => '(cn=%searchwithldap%)',
-    			'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
-	*/
         'authproc' => array(
     		10 => array(
       			'class' => 'core:AttributeAdd',
@@ -458,6 +444,12 @@ $config = array(
     		48 => array(
         		'class' => 'core:AttributeCopy',
         		'urn:mace:dir:attribute-def:mail' => 'searchwithldap',
+		),
+		49 => array(
+			'class' => 'core:AttributeAlter',
+			'subject' => 'searchwithldap',
+			'pattern' => '/Joseph+Weeler@university-example.org/',
+			'replacement' => 'Joseph-Weeler@university-example.org',
 		),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
