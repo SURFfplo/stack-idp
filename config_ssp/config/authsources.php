@@ -431,16 +431,7 @@ $config = array(
         ),
  
 	// add uid attribute from ldap
-        'authproc' => array(
-    		10 => array(
-      			'class' => 'core:AttributeAdd',
-      			'uidTest' => '123',
-    		),
-        	20 => array(
-            		'class' => 'saml:NameIDAttribute',
-            		'format' => '%V',
-            		'attribute' => 'nameId',
-        	),
+        /* attempt to replace + with -, but pattern matching is not like this...
     		48 => array(
         		'class' => 'core:AttributeCopy',
         		'urn:mace:dir:attribute-def:mail' => 'searchwithldap',
@@ -451,12 +442,23 @@ $config = array(
 			'pattern' => '/+/',
 			'replacement' => '-',
 		),
+    			//'search.filter' => '(cn=%searchwithldap%)',
+	*/
+        'authproc' => array(
+    		10 => array(
+      			'class' => 'core:AttributeAdd',
+      			'uidTest' => '123',
+    		),
+        	20 => array(
+            		'class' => 'saml:NameIDAttribute',
+            		'format' => '%V',
+            		'attribute' => 'nameId',
+        	),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
     			'authsource' => 'surfuni-ldap',
     			'attributes' => array('uid'),
-    			//'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
-    			'search.filter' => '(cn=%searchwithldap%)',
+    			'search.filter' => '(cn=%urn:mace:dir:attribute-def:mail%)',
 		),
     		60 => array(
         		'class' => 'core:AttributeCopy',
