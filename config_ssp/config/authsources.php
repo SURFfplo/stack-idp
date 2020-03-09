@@ -441,12 +441,15 @@ $config = array(
             		'format' => '%V',
             		'attribute' => 'nameId',
         	),
-		40 => array(
+    		48 => array(
+        		'class' => 'core:AttributeCopy',
+        		'urn:mace:dir:attribute-def:mail' => 'searchwithldap',
+		),
+		49 => array(
 			'class' => 'core:AttributeAlter',
-			'subject' => 'urn:mace:dir:attribute-def:mail',
+			'subject' => 'searchwithldap',
 			'pattern' => '/+/',
 			'replacement' => '-',
-			'target' => 'searchwithldap',
 		),
 		50 => array(
     			'class' => 'ldap:AttributeAddFromLDAP',
